@@ -1,15 +1,16 @@
 <?php
-Flight::route('/',function(){
-	$foodsSql = "SELECT * FROM foods";
-	$foods = Flight::db()->query($foodsSql);
-	$categoriesSql = "SELECT * FROM foodcategories";
-	$categories = Flight::db()->query($categoriesSql);
+
+Flight::route('/', function () {
+    $foodsSql = "SELECT * FROM foods";
+    $foods = Flight::db()->query($foodsSql);
+    $categoriesSql = "SELECT * FROM foodcategories";
+    $categories = Flight::db()->query($categoriesSql);
     Flight::render('homepage.php', array('foods' => $foods, 'categories' => $categories));
 });
 
 Flight::route('POST /login', ["auth", "login"]);
 Flight::route('GET /logout', ["auth", "logout"]);
-Flight::route('POST /register', ["auth","register"]);
+Flight::route('POST /register', ["auth", "register"]);
 Flight::route('POST /writeUs', ["messageController", "sendMessage"]);
 Flight::route('POST /subscribe', ["subscriptionController", "subscribe"]);
 Flight::route('GET /panel', ["panelController", "showPanel"]);
@@ -31,7 +32,3 @@ Flight::route('POST /panel/users/@id', ["userController", "deleteUser"]);
 Flight::route('POST /panel/orderProcessed', ["orderController", "orderProcessed"]);
 Flight::route('POST /panel/orderDelete', ["orderController", "orderDeleted"]);
 Flight::route('POST /order', ["orderController", "orderSubmit"]);
-
-// Flight::route("POST /login",["auth","login"]);
-
-// Flight::route("GET /logout",["auth","logout"]);
