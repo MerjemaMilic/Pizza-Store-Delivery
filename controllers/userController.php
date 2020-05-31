@@ -1,6 +1,11 @@
 <?php
 
-class UserController
+abstract class UController
+{
+    abstract public function deleteUser($id);
+}
+
+class UserController extends UController
 {
     public function deleteUser($id)
     {

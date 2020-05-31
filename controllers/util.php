@@ -1,6 +1,12 @@
 <?php
 
-class Util
+abstract class UtilController
+{
+    abstract public function render($viewname, $args = array());
+}
+
+
+class Util extends UtilController
 {
     public function render($viewname, $args = array())
     {

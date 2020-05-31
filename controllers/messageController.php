@@ -1,6 +1,13 @@
 <?php
 
-class MessageController
+abstract class MsgController
+{
+    abstract public function sendMessage();
+    abstract public function viewMessage($id);
+    abstract public function deleteMessage($id);
+}
+
+class MessageController extends MsgController
 {
     public function sendMessage()
     {

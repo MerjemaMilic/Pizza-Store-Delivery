@@ -1,6 +1,11 @@
 <?php
 
-class SubscriptionController
+abstract class SController
+{
+    abstract public function subscribe();
+}
+
+class SubscriptionController extends SController
 {
 
     public function subscribe()

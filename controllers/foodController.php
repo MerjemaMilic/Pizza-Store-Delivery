@@ -1,6 +1,15 @@
 <?php
 
-class FoodController
+abstract class FController
+{
+    abstract public function addFood();
+    abstract public function createFood();
+    abstract public function updateFood($id);
+    abstract public function deleteFood();
+
+}
+
+class FoodController extends FController
 {
     public function addFood()
     {

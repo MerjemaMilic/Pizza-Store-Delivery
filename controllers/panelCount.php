@@ -1,6 +1,14 @@
 <?php
 
-class PanelCount
+abstract class PCount
+{
+    abstract public function totalUsers();
+    abstract public function totalMessages();
+    abstract public function totalPendingOrders();
+    abstract public function totalOrders();
+}
+
+class PanelCount extends PCount
 {
     public function totalUsers()
     {

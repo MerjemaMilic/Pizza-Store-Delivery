@@ -1,6 +1,17 @@
 <?php
 
-class MenuController
+abstract class MController
+{
+    abstract public function showMenu();
+    abstract public function addCategory();
+    abstract public function createFoodCategory();
+    abstract public function deleteFoodCategory();
+    abstract public function addFoodView();
+    abstract public function viewFood($id);
+
+}
+
+class MenuController extends MContoller
 {
     public function showMenu()
     {

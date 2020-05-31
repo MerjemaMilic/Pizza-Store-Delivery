@@ -1,6 +1,11 @@
 <?php
 
-class PanelController
+abstract class PController
+{
+    abstract public function showPanel();
+}
+
+class PanelController extends PController
 {
     public function showPanel()
     {
