@@ -26,10 +26,14 @@ class ViewTest extends TestCase
         $this->assertTrue($this->view->exists('panel.php'));
         $this->assertTrue($this->view->exists('showFood.php'));
         $this->assertFalse($this->view->exists('homepage5463.php'));
-        $this->assertFalse($this->view->exists('servies.html'));
+        $this->assertFalse($this->view->exists('services.html'));
         $this->assertFalse($this->view->exists('menu.html'));
         $this->assertFalse($this->view->exists('contact.html'));
         $this->assertFalse($this->view->exists('blog.html'));
+        $this->assertFalse($this->view->exists('blog-single.html'));
+        $this->assertFalse($this->view->exists('about.html'));
+
+        $this->assertFalse($this->view->exists('user.php'));
 
     }
 
